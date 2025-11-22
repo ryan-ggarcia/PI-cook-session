@@ -91,10 +91,10 @@ app.get("/",verificaLogin, (req, res) => {
                     <main>
                         <div class="d-flex justify-content-evenly align-items-center flex-row g-3">
 
-                            <a href="/cadForn"><button class="btn btn-primary">Cadastrar Fornecedores </button></a>
+                            <a href="/cadForn"><button class="btn btn-primary">Cadastrar Produtos </button></a>
 
                         
-                            <a href="/listaForn"><button class="btn btn-danger">Listar Fornecedores </button></a>
+                            <a href="/listaForn"><button class="btn btn-danger">Listar Produtos </button></a>
                         </div>
                     </main>
                     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
@@ -309,78 +309,42 @@ app.get("/cadForn",verificaLogin, (req, res) => {
                         <h1>Cadastrar Fornecedor</h1>
                         <form method="POST" action="/validaForn">
                             <div class="mb-3">
-                                    <label for="formGroupExampleInput" class="form-label">CNPJ</label>
-                                    <input type="text" class="form-control" id="formGroupExampleInput" name="cnpj" placeholder="Digite o CNPJ aqui">
+                                    <label for="formGroupExampleInput" class="form-label">Codigo de barras</label>
+                                    <input type="number" class="form-control" id="formGroupExampleInput" name="codBarras" placeholder="Digite o Codigo de carras aqui">
                             </div>
                             <div class="row g-3">
                                 <div class="col">
-                                    <label type="text">Razão Social</label>
-                                    <input type="text" class="form-control" placeholder="Razão Social" aria-label="First name" id="nomeS" name="nomeS">
+                                    <label type="text">Descrição do produto</label>
+                                    <input type="text" class="form-control" placeholder="Descrição do produto" aria-label="First name" id="desc" name="desc">
                                 </div>
                                 <div class="col">
-                                    <label type="text">Nome fantasia</label>
-                                    <input type="text" class="form-control" placeholder="Nome Fantasia" aria-label="Last name" id="nomeF" name="nomeF">
+                                    <label type="text">Preço de custo</label>
+                                    <input type="text" class="form-control" placeholder="Preço de custo" aria-label="Last name" id="pc" name="pc">
                                 </div>
                             </div>
                             <div class="row g-3">
                                 <div class="col">
-                                    <label type="text">Endereço</label>
-                                    <input type="text" class="form-control" placeholder="Endereço" aria-label="First name" id="address" name="address">
+                                    <label type="text">Preço de venda</label>
+                                    <input type="text" class="form-control" placeholder="Preço de venda" aria-label="First name" id="pv" name="pv">
                                 </div>
                                 <div class="col">
-                                    <label type="text">Cidade</label>
-                                    <input type="text" class="form-control" placeholder="Cidade" aria-label="Last name" id="city" name="city">
+                                    <label type="text">Data de validade</label>
+                                    <input type="date" class="form-control" placeholder="Data de validade do produto" aria-label="Last name" id="data" name="data">
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <label for="txt" class="form-label">UF</label>
-                                    <select class="form-select" id="uf" name="uf">
-                                        <option selected disabled value="">Escolha</option>
-                                        <option value="AC">Acre</option>
-                                        <option value="AL">Alagoas</option>
-                                        <option value="AP">Amapá</option>
-                                        <option value="AM">Amazonas</option>
-                                        <option value="BA">Bahia</option>
-                                        <option value="CE">Ceará</option>
-                                        <option value="DF">Distrito Federal</option>
-                                        <option value="ES">Espírito Santo</option>
-                                        <option value="GO">Goiás</option>
-                                        <option value="MA">Maranhão</option>
-                                        <option value="MT">Mato Grosso</option>
-                                        <option value="MS">Mato Grosso do Sul</option>
-                                        <option value="MG">Minas Gerais</option>
-                                        <option value="PA">Pará</option>
-                                        <option value="PB">Paraíba</option>
-                                        <option value="PR">Paraná</option>
-                                        <option value="PE">Pernambuco</option>
-                                        <option value="PI">Piauí</option>
-                                        <option value="RJ">Rio de Janeiro</option>
-                                        <option value="RN">Rio Grande do Norte</option>
-                                        <option value="RS">Rio Grande do Sul</option>
-                                        <option value="RO">Rondônia</option>
-                                        <option value="RR">Roraima</option>
-                                        <option value="SC">Santa Catarina</option>
-                                        <option value="SP">São Paulo</option>
-                                        <option value="SE">Sergipe</option>
-                                        <option value="TO">Tocantins</option>
-                                    </select>
-                            </div>
+                           
                             <div class="col">
-                                <label type="text">CEP</label>
-                                <input type="text" class="form-control" placeholder="CEP" aria-label="First name" id="cep" name="cep">
+                                <label type="text">Quantidade em estoque</label>
+                                <input type="text" class="form-control" placeholder="Quantidade no estoque" aria-label="First name" id="qtd" name="qtd">
                             </div>
                             <div class="row g-3">
                                 <div class="col">
-                                    <label type="text">Email</label>
-                                    <input type="text" class="form-control" placeholder="Email" aria-label="First name" id="email" name="email">
-                                </div>
-                                <div class="col">
-                                    <label type="text">Telefone</label>
-                                    <input type="text" class="form-control" placeholder="Telefone" aria-label="Last name" id="phone" name="phone">
+                                    <label type="text">Nome do fabricante</label>
+                                    <input type="text" class="form-control" placeholder="Nome do Fabricante" aria-label="First name" id="nome" name="nome">
                                 </div>
                             </div>
                             <div class="row-md-3 align-items-end justify-content-end d-flex">
-                                <button type="submit" class="btn btn-primary">Cadastrar Fornecedor</button>
+                                <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
                                 <a href="/"><button type="button" class="btn btn-danger">Cancelar</button></a>
                             </div>
                         </form>
@@ -391,17 +355,15 @@ app.get("/cadForn",verificaLogin, (req, res) => {
         `)
 })
 app.post("/validaForn",verificaLogin, (req, res) => {
-    const cnpj = req.body.cnpj
-    const nomeS = req.body.nomeS
-    const nomeF = req.body.nomeF
-    const address = req.body.address
-    const cep = req.body.cep
-    const city = req.body.city
-    const email = req.body.email
-    const tel = req.body.phone
-    const uf = req.body.uf
-    if (nomeS && nomeF && address && cep && city && email && tel && uf) {
-        usuarios.push({ nomeS, nomeF, address, cep, city, email, tel, uf })
+    const cod = req.body.codBarras
+    const nome = req.body.nome
+    const desc = req.body.desc
+    const pc = req.body.pc
+    const pv = req.body.pv
+    const data = req.body.data
+    const qtd = req.body.qtd
+    if (desc && cod && pc && pv && nome && data && qtd ) {
+        usuarios.push({ cod, pc, pv, desc, nome, data, qtd})
         res.redirect("/listaForn")
     } else {
         let conteudo = `
@@ -437,126 +399,84 @@ app.post("/validaForn",verificaLogin, (req, res) => {
                         <h1>Cadastrar Fornecedor</h1>
                         <form method="POST" action="/validaForn">
                             <div class="mb-3">
-                                <label for="cnpj" class="form-label">CNPJ</label>
-                                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="Digite o CNPJ aqui" value="${cnpj}">
+                                    <label for="formGroupExampleInput" class="form-label">Codigo de barras</label>
+                                    <input type="number" class="form-control" id="formGroupExampleInput" name="codBarras" placeholder="Digite o Codigo de carras aqui" value="${cod}">
                             
             `
-        if (!cnpj) {
+        if (!cod) {
             conteudo += `
                     <div>
-                        <span class="text-danger">CNPJ é obrigatório</span>
+                        <span class="text-danger">Codigo de barras é obrigatório</span>
                     </div>
                 `
         }
         conteudo += `
                 </div>
                 <div class="row g-3">
-                    <div class="col">
-                        <label type="text">Razão Social</label>
-                        <input type="text" class="form-control" placeholder="Razão Social" aria-label="First name" id="nomeS" name="nomeS" value="${nomeS}">
+                                <div class="col">
+                                    <label type="text">Descrição do produto</label>
+                                    <input type="text" class="form-control" placeholder="Descrição do produto" aria-label="First name" id="desc" name="desc" value="${desc}">
             `
-        if (!nomeS) {
+        if (!desc) {
             conteudo += `
                     <div>
-                        <span class="text-danger">Nome Social é obrigatório</span>
+                        <span class="text-danger">Descrição do produto é obrigatório</span>
                     </div> 
                 `
         }
         conteudo += `
                 </div>
                     <div class="col">
-                            <label type="text">Nome fantasia</label>
-                            <input type="text" class="form-control" placeholder="Nome Fantasia" aria-label="Last name" id="nomeF" name="nomeF" value="${nomeF}">
+                                    <label type="text">Preço de custo</label>
+                                    <input type="text" class="form-control" placeholder="Preço de custo" aria-label="Last name" id="pc" name="pc" value="${pc}">
                 `
-        if (!nomeF) {
+        if (!pc) {
             conteudo += `
                     <div>
-                        <span class="text-danger">Nome Fantasia é obrigatório</span>
+                        <span class="text-danger">O preco de custo é obrigatório</span>
                     </div>
                 `
         }
         conteudo += `
                     </div>
                     </div>
-                <div class="row g-3">
-                    <div class="col">
-                        <label type="text">Endereço</label>
-                        <input type="text" class="form-control" placeholder="Endereço" aria-label="First name" id="address" name="address" value="${address}">
+               <div class="col">
+                                    <label type="text">Preço de venda</label>
+                                    <input type="text" class="form-control" placeholder="Preço de venda" aria-label="First name" id="pv" name="pv" value="${pv}">
             `
 
-        if (!address) {
+        if (!pv) {
             conteudo += `
                     <div>
-                        <span class="text-danger">Endereço é obrigatório</span>
+                        <span class="text-danger">O preço de venda é obrigatório</span>
                     </div>
                 `
         }
         conteudo += `
                     </div>
                     <div class="col">
-                        <label type="text">Cidade</label>
-                        <input type="text" class="form-control" placeholder="Cidade" aria-label="Last name" id="city" name="city" value="${city}">
+                                    <label type="text">Data de validade</label>
+                                    <input type="date" class="form-control" placeholder="Data de validade do produto" aria-label="Last name" id="data" name="data">
+                                </div>
                 `
-        if (!city) {
+        if (!data) {
             conteudo += `
                     <div>
-                        <span class="text-danger">Cidade é obrigatória</span>
+                        <span class="text-danger">A data de validade é obrigatória</span>
                     </div>
                 `
         }
         conteudo += `
                     </div>
-                </div>
-                    <div class="col-md-3">
-                        <label for="txt" class="form-label">UF</label>
-                            <select class="form-select" id="uf" name="uf" value="${uf}">
-                                <option selected disabled value="">Escolha</option>
-                                <option value="AC">Acre</option>
-                                <option value="AL">Alagoas</option>
-                                <option value="AP">Amapá</option>
-                                <option value="AM">Amazonas</option>
-                                <option value="BA">Bahia</option>
-                                <option value="CE">Ceará</option>
-                                <option value="DF">Distrito Federal</option>
-                                <option value="ES">Espírito Santo</option>
-                                <option value="GO">Goiás</option>
-                                <option value="MA">Maranhão</option>
-                                <option value="MT">Mato Grosso</option>
-                                <option value="MS">Mato Grosso do Sul</option>
-                                <option value="MG">Minas Gerais</option>
-                                <option value="PA">Pará</option>
-                                <option value="PB">Paraíba</option>
-                                <option value="PR">Paraná</option>
-                                <option value="PE">Pernambuco</option>
-                                <option value="PI">Piauí</option>
-                                <option value="RJ">Rio de Janeiro</option>
-                                <option value="RN">Rio Grande do Norte</option>
-                                <option value="RS">Rio Grande do Sul</option>
-                                <option value="RO">Rondônia</option>
-                                <option value="RR">Roraima</option>
-                                <option value="SC">Santa Catarina</option>
-                                <option value="SP">São Paulo</option>
-                                <option value="SE">Sergipe</option>
-                                <option value="TO">Tocantins</option>
-                            </select>
-            `
-        if (!uf) {
-            conteudo += `
-                    <div>
-                        <span class="text-danger">A Uf é obrigatória</span>
-                    </div>
-            `
-        }
-        conteudo += `
-                    </div>
-                        <div class="col">
-                            <label type="text">CEP</label>
-                            <input type="text" class="form-control" placeholder="CEP" aria-label="First name" id="cep" name="cep" value="${cep}">
+                         <div class="col">
+                                <label type="text">Quantidade em estoque</label>
+                                <input type="text" class="form-control" placeholder="Quantidade no estoque" aria-label="First name" id="qtd" name="qtd">
+                            </div>
                 `
-        if (!cep) {
+        if (!qtd) {
             conteudo += `
                     <div>
-                        <span class="text-danger">CEP é obrigatório</span>
+                        <span class="text-danger">A quantidade é obrigatório</span>
                     </div>
             `
         }
@@ -564,36 +484,23 @@ app.post("/validaForn",verificaLogin, (req, res) => {
                 </div>
                 </div>
                     <div class="row g-3">
-                        <div class="col">
-                            <label type="text">Email</label>
-                            <input type="text" class="form-control" placeholder="Email" aria-label="First name" id="email" name="email" value="${email}">
+                       <div class="col">
+                                    <label type="text">Nome do fabricante</label>
+                                    <input type="text" class="form-control" placeholder="Nome do Fabricante" aria-label="First name" id="nome" name="nome">
+                                </div>
                 `
-        if (!email) {
+        if (!nome) {
             conteudo += `
                     <div>
-                        <span class="text-danger">E-mail é obrigatório</span>
+                        <span class="text-danger">O nome do fornercedor é obrigatório</span>
                     </div>
             `
         }
-        conteudo += `
-                </div>
-                    <div class="col">
-                        <label type="text">Telefone</label>
-                        <input type="text" class="form-control" placeholder="Telefone" aria-label="Last name" id="phone" name="phone" value="${tel}">
-                `
-        if (!tel) {
-            conteudo += `
-                    <div>
-                        <span class="text-danger">Telefone é obrigatório</span>
-                    </div>
-            `
-        }
-
         conteudo += `
             </div>
                             </div>
                             <div class="row-md-3 align-items-end justify-content-end d-flex">
-                                <button type="submit" class="btn btn-primary">Cadastrar Fornecedor</button>
+                                <button type="submit" class="btn btn-primary">Cadastrar Produto</button>
                                 <a href="/"><button type="button" class="btn btn-danger">Cancelar</button></a>
                             </div>
                         </form>
@@ -607,7 +514,7 @@ app.post("/validaForn",verificaLogin, (req, res) => {
 })
 app.get("/listaForn",verificaLogin, (req, res) => {
     if (!usuarios.length) {
-        res.send("<h1>Não há fornecedores cadastrados</h1><a href='/'><button class='btn btn-danger'>Voltar</button></a>")
+        res.send("<h1>Não há Produtos cadastrados</h1><a href='/'><button class='btn btn-danger'>Voltar</button></a>")
     } else {
 
         let conteudo = `
@@ -643,18 +550,17 @@ app.get("/listaForn",verificaLogin, (req, res) => {
                 </head>
                 <body>
                     <main>
-                        <h1>Lista de Fornecedores</h1>
+                        <h1>Lista de Produtos</h1>
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>Nome Social</th>
-                                    <th>Nome Fantasia</th>
-                                    <th>Endereço</th>
-                                    <th>Cidade</th>
-                                    <th>UF</th>
-                                    <th>CEP</th>
-                                    <th>Email</th>
-                                    <th>Telefone</th>
+                                    <th>Codigo de barras</th>
+                                    <th>Descrição do produto</th>
+                                    <th>Preço de custo</th>
+                                    <th>Preço de venda</th>
+                                    <th>Data de validade</th>
+                                    <th>Quantidade em estoque</th>
+                                    <th>Nome da fabricante</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -662,14 +568,13 @@ app.get("/listaForn",verificaLogin, (req, res) => {
         for (let i = 0; i < usuarios.length; i++) {
             conteudo += `
             <tr>
-                <td>${usuarios[i].nomeS}</td>
-                <td>${usuarios[i].nomeF}</td>
-                <td>${usuarios[i].address}</td>
-                <td>${usuarios[i].city}</td>
-                <td>${usuarios[i].uf}</td>
-                <td>${usuarios[i].cep}</td>
-                <td>${usuarios[i].email}</td>
-                <td>${usuarios[i].tel}</td>
+                <td>${usuarios[i].cod}</td>
+                <td>${usuarios[i].desc}</td>
+                <td>${usuarios[i].pc}</td>
+                <td>${usuarios[i].pv}</td>
+                <td>${usuarios[i].data}</td>
+                <td>${usuarios[i].qtd}</td>
+                <td>${usuarios[i].nome}</td>
             </tr>
     `
         }
@@ -677,7 +582,7 @@ app.get("/listaForn",verificaLogin, (req, res) => {
                             </tbody>
                         </table>
                         <div class="row-md-3 align-items-end justify-content-end d-flex">
-                            <a href="/cadForn"><button class="btn btn-primary">Cadastrar Novo Fornecedor</button></a>
+                            <a href="/cadForn"><button class="btn btn-primary">Cadastrar Novo Produto</button></a>
                             <a href="/"><button class="btn btn-danger">Voltar</button></a>
                         </div>
                     </main>
