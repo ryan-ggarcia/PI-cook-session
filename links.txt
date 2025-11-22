@@ -1,0 +1,2 @@
+link do git hub: https://github.com/ryan-ggarcia/PI-cook-session.git
+link do vercel: https://pi-cook-session.vercel.app/login
